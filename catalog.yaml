@@ -1,1 +1,7 @@
-templates: []
+templates:
+  - identifier: blank
+    displayName: Blank Workspace
+    description: Minimal starter workspace
+  - identifier: minimal
+    displayName: Minimal API
+    description: Starter workspace with a minimal API focus
