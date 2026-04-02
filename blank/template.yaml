@@ -1,0 +1,9 @@
+id: blank
+name: Blank Workspace
+description: Minimal starter workspace template
+version: 1.0.0
+language: rust
+tags:
+  - starter
+  - workspace
+source_url: https://github.com/n-framework/nfw-templates
