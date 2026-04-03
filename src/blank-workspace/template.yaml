@@ -1,8 +1,8 @@
-id: blank
+# yaml-language-server: $schema=../../template.schema.json
+id: blank-workspace
 name: Blank Workspace
 description: Minimal starter workspace template
 version: 1.0.0
-language: rust
 tags:
   - starter
   - workspace

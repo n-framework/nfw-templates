@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n-framework.dev/schemas/nfw/template.schema.json",
+  "title": "NFW Template Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "description", "version"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional JSON schema pointer for YAML tooling."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Template identifier in kebab-case."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$",
+      "description": "SemVer version string."
+    },
+    "language": {
+      "type": "string",
+      "enum": ["dotnet", "go", "rust", "neutral"],
+      "description": "Optional. Omit for language-agnostic templates."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "min_cli_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "source_url": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

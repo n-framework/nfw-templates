@@ -1,7 +1,4 @@
 templates:
-  - identifier: blank
+  - identifier: blank-workspace
     displayName: Blank Workspace
     description: Minimal starter workspace
-  - identifier: minimal
-    displayName: Minimal API
-    description: Starter workspace with a minimal API focus

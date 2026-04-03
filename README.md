@@ -5,6 +5,8 @@
 
 Starter templates for the `nfw` CLI toolchain. Templates use Scriban for rendering and are consumed by the [nfw CLI](../nfw).
 
+Templates live under the repository `src/` directory (for example `src/blank-workspace/`).
+
 **Core Techs:**
 [![Scriban](https://img.shields.io/badge/Scriban-0050A0?style=flat)](https://github.com/scriban/scriban)
 
@@ -14,8 +16,7 @@ Starter templates for the `nfw` CLI toolchain. Templates use Scriban for renderi
 
 | Identifier | Display Name    | Description                      |
 | ---------- | --------------- | -------------------------------- |
-| `blank`    | Blank Workspace | Minimal starter workspace        |
-| `minimal`  | Minimal API     | Starter with a minimal API focus |
+| `blank-workspace` | Blank Workspace | Minimal starter workspace |
 
 ---
 
@@ -28,7 +29,7 @@ Templates are resolved by the `nfw` CLI. See the [nfw CLI README](../nfw) for de
 nfw templates
 
 # Create a workspace from a template
-nfw new my-workspace --template blank
+nfw new my-workspace --template blank-workspace
 ```
 
 ---

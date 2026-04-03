@@ -1,9 +1,0 @@
-id: minimal
-name: Minimal API
-description: Starter workspace with a minimal API focus
-version: 1.0.0
-language: rust
-tags:
-  - api
-  - minimal
-source_url: https://github.com/n-framework/nfw-templates
