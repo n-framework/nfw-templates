@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=../../template.schema.json
+id: dotnet-service
+name: .NET Service (Clean Architecture)
+description: .NET service template with Domain, Application, Infrastructure, and Api layers
+version: 1.0.0
+language: dotnet
+tags:
+  - service
+  - dotnet
+  - clean-architecture
+source_url: https://github.com/n-framework/nfw-templates

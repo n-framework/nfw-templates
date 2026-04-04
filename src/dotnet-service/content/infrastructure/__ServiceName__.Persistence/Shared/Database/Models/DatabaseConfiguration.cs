@@ -1,0 +1,13 @@
+namespace __ServiceName__.Infrastructure.Persistence.Shared.Database.Models;
+
+public readonly record struct DatabaseConfiguration
+{
+	public string Name { get; }
+
+	/// <exception cref="ArgumentException">Thrown when name is null, empty, or whitespace.</exception>
+	public DatabaseConfiguration(string name)
+	{
+		ArgumentException.ThrowIfNullOrWhiteSpace(name);
+		Name = name.Trim();
+	}
+}

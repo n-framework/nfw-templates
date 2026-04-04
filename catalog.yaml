@@ -2,3 +2,6 @@ templates:
   - identifier: blank-workspace
     displayName: Blank Workspace
     description: Minimal starter workspace
+  - identifier: dotnet-service
+    displayName: .NET Service (Clean Architecture)
+    description: .NET service with Domain/Application/Infrastructure/Api layers
