@@ -3,7 +3,6 @@ id: dotnet-service
 name: .NET Service (Clean Architecture)
 description: .NET service template with Domain, Application, Infrastructure, and Api layers
 version: 1.0.0
-type: service
 language: dotnet
 tags:
   - service

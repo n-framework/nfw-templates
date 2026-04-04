@@ -1,7 +1,5 @@
 # **ServiceName**
 
-Generated from template `dotnet-service`.
-
 ## Folder Layout
 
 ```text
@@ -20,13 +18,23 @@ Models (configuration, DTO, and helper records) live under `Models` subfolders i
 
 ## Layer Highlights
 
-- `core/__ServiceName__.Domain`: Business entities stored under `Shared/Entities` (e.g., `HealthStatus`).
-- `core/__ServiceName__.Application`: Contracts, health-profile registration, and DI helpers.
-- `core/__ServiceName__.Application`: Contracts live under `__ServiceName__.Application/Shared/Services/Abstractions`, shared models (e.g., `Shared/Models/ApplicationHealthProfile`), health-profile registration, and DI helpers.
-- `infrastructure/__ServiceName__.Persistence`: DbContext, EF Core setup, and provider implementations (health readiness, configuration models).
-- `presentation/__ServiceName__.WebApi`: Host bootstrap (`Program.cs`), OpenAPI wiring, configuration extensions, and launch settings.
+- `core/__ServiceName__.Domain`: Business entities and value objects.
+- `core/__ServiceName__.Application`: Application services and DI registration helpers.
+- `infrastructure/__ServiceName__.Persistence`: Database context (`BaseDbContext`), EF Core setup, and configuration models (e.g., `DatabaseConfiguration`).
+- `presentation/__ServiceName__.WebApi`: Host bootstrap (`Program.cs`), health endpoints, and OpenAPI configuration.
 
 ## Health Endpoints
 
 - `GET /health/live`
 - `GET /health/ready`
+
+---
+
+```text
+   _  ______                                   __
+  / |/ / __/______ ___ _  ___ _    _____  ____/ /__
+ /    / _// __/ _ `/  ' \/ -_) |/|/ / _ \/ __/  '_/
+/_/|_/_/ /_/  \_,_/_/_/_/\__/|__,__/\___/_/ /_/\_\
+```
+
+Generated from template [`dotnet-service`](https://github.com/n-framework/nfw-templates).

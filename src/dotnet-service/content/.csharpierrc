@@ -1,8 +1,8 @@
+
 {
+  "endOfLine": "lf",
   "printWidth": 120,
-  "tabWidth": 2,
-  "useTabs": false,
   "semiColons": true,
   "trailingCommas": "enable",
-  "endOfLine": "lf"
+  "useTabs": true
 }

@@ -1,11 +1,50 @@
-namespace __ServiceName__.Presentation.WebApi.Shared.OpenApi.Models;
+using System.Net.Mail;
+
+namespace __ServiceName__.WebApi.Shared.OpenApi.Models;
 
 public sealed record OpenApiConfiguration(
-    string Title,
-    string Version,
-    string Description,
-    string ContactName,
-    string ContactEmail,
-    string LicenseName,
-    string LicenseUrl
-);
+	string Title,
+	string Version,
+	string Description,
+	string ContactName,
+	string ContactEmail,
+	string LicenseName,
+	string LicenseUrl
+)
+{
+	/// <exception cref="ArgumentException">Thrown when any required field is null/empty, license URL is invalid, or contact email is invalid.</exception>
+	public static OpenApiConfiguration Create(
+		string title,
+		string version,
+		string description,
+		string contactName,
+		string contactEmail,
+		string licenseName,
+		string licenseUrl
+	)
+	{
+		ArgumentException.ThrowIfNullOrWhiteSpace(title);
+		ArgumentException.ThrowIfNullOrWhiteSpace(version);
+		ArgumentException.ThrowIfNullOrWhiteSpace(description);
+		ArgumentException.ThrowIfNullOrWhiteSpace(contactName);
+		ArgumentException.ThrowIfNullOrWhiteSpace(contactEmail);
+		ArgumentException.ThrowIfNullOrWhiteSpace(licenseName);
+		ArgumentException.ThrowIfNullOrWhiteSpace(licenseUrl);
+
+		if (!Uri.TryCreate(licenseUrl, UriKind.Absolute, out _))
+			throw new ArgumentException("License URL must be a valid absolute URL.", nameof(licenseUrl));
+
+		if (!MailAddress.TryCreate(contactEmail, out _))
+			throw new ArgumentException("Contact email must be a valid email address.", nameof(contactEmail));
+
+		return new OpenApiConfiguration(
+			title,
+			version,
+			description,
+			contactName,
+			contactEmail,
+			licenseName,
+			licenseUrl
+		);
+	}
+}
