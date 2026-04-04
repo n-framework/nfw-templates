@@ -37,4 +37,4 @@ Models (configuration, DTO, and helper records) live under `Models` subfolders i
 /_/|_/_/ /_/  \_,_/_/_/_/\__/|__,__/\___/_/ /_/\_\
 ```
 
-Generated from template [`dotnet-service`](https://github.com/n-framework/nfw-templates).
+Generated from template [`dotnet-service`](https://github.com/n-framework/nfw-templates) of [NFramework](https://github.com/n-framework/).
