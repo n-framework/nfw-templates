@@ -17,6 +17,7 @@ Templates live under the repository `src/` directory (for example `src/blank-wor
 | Identifier | Display Name    | Description                      |
 | ---------- | --------------- | -------------------------------- |
 | `blank-workspace` | Blank Workspace | Minimal starter workspace |
+| `dotnet-service` | .NET Service (Clean Architecture) | .NET service with Domain/Application/Infrastructure/Api layers |
 
 ---
 
