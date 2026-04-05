@@ -1,6 +1,6 @@
 SHELL := bash
 
-.PHONY: format lint
+.PHONY: format lint test
 
 format:
 	dotnet format .
@@ -8,3 +8,6 @@ format:
 
 lint:
 	dotnet format --verify-no-changes --verbosity quiet
+
+test:
+	dotnet test
