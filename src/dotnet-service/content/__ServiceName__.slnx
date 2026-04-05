@@ -1,6 +1,6 @@
 <Solution>
-	<Project Path="core/__ServiceName__.Domain/__ServiceName__.Domain.csproj" />
-	<Project Path="core/__ServiceName__.Application/__ServiceName__.Application.csproj" />
+	<Project Path="core/__ServiceName__.Core.Domain/__ServiceName__.Core.Domain.csproj" />
+	<Project Path="core/__ServiceName__.Core.Application/__ServiceName__.Core.Application.csproj" />
 	<Project Path="infrastructure/__ServiceName__.Persistence/__ServiceName__.Infrastructure.Persistence.csproj" />
-	<Project Path="presentation/__ServiceName__.WebApi/__ServiceName__.WebApi.csproj" />
+	<Project Path="presentation/__ServiceName__.Presentation.WebApi/__ServiceName__.Presentation.WebApi.csproj" />
 </Solution>
