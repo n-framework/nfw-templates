@@ -7,7 +7,7 @@
 	</PropertyGroup>
 	<!-- Project References -->
 	<ItemGroup>
-		<ProjectReference Include="../../core/__ServiceName__.Application/__ServiceName__.Application.csproj" />
+		<ProjectReference Include="../../core/__ServiceName__.Core.Application/__ServiceName__.Core.Application.csproj" />
 		<ProjectReference Include="../../infrastructure/__ServiceName__.Persistence/__ServiceName__.Infrastructure.Persistence.csproj" />
 	</ItemGroup>
 	<!-- Package References -->

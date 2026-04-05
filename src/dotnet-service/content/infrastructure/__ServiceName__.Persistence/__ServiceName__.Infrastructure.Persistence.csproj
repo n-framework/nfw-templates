@@ -6,8 +6,8 @@
 	</PropertyGroup>
 	<!-- Project References -->
 	<ItemGroup>
-		<ProjectReference Include="../../core/__ServiceName__.Application/__ServiceName__.Application.csproj" />
-		<ProjectReference Include="../../core/__ServiceName__.Domain/__ServiceName__.Domain.csproj" />
+		<ProjectReference Include="../../core/__ServiceName__.Core.Application/__ServiceName__.Core.Application.csproj" />
+		<ProjectReference Include="../../core/__ServiceName__.Core.Domain/__ServiceName__.Core.Domain.csproj" />
 	</ItemGroup>
 	<!-- Package References -->
 	<ItemGroup>

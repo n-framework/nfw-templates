@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace __ServiceName__.Application;
+namespace __ServiceName__.Core.Application;
 
 public static class ApplicationServiceRegistration
 {

@@ -1,7 +1,7 @@
-using __ServiceName__.Application;
+using __ServiceName__.Core.Application;
 using __ServiceName__.Infrastructure.Persistence;
-using __ServiceName__.WebApi.Shared.HealthCheck.Extensions;
-using __ServiceName__.WebApi.Shared.OpenApi.Extensions;
+using __ServiceName__.Presentation.WebApi.Shared.HealthCheck.Extensions;
+using __ServiceName__.Presentation.WebApi.Shared.OpenApi.Extensions;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

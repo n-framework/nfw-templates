@@ -6,7 +6,7 @@
 	</PropertyGroup>
 	<!-- Project References -->
 	<ItemGroup>
-		<ProjectReference Include="../__ServiceName__.Domain/__ServiceName__.Domain.csproj" />
+		<ProjectReference Include="../__ServiceName__.Core.Domain/__ServiceName__.Core.Domain.csproj" />
 	</ItemGroup>
 	<!-- Package References -->
 	<ItemGroup>

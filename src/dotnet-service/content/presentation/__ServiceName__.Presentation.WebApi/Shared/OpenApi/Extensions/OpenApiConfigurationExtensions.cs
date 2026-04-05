@@ -1,10 +1,10 @@
-using __ServiceName__.WebApi.Shared.OpenApi.Models;
+using __ServiceName__.Presentation.WebApi.Shared.OpenApi.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace __ServiceName__.WebApi.Shared.OpenApi.Extensions;
+namespace __ServiceName__.Presentation.WebApi.Shared.OpenApi.Extensions;
 
 public static class OpenApiConfigurationExtensions
 {

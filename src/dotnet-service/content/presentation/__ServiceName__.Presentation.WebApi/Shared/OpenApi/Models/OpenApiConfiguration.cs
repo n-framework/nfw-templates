@@ -1,6 +1,6 @@
 using System.Net.Mail;
 
-namespace __ServiceName__.WebApi.Shared.OpenApi.Models;
+namespace __ServiceName__.Presentation.WebApi.Shared.OpenApi.Models;
 
 public sealed record OpenApiConfiguration(
 	string Title,

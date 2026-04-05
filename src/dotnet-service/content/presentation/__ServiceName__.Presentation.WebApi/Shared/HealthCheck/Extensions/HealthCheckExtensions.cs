@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace __ServiceName__.WebApi.Shared.HealthCheck.Extensions;
+namespace __ServiceName__.Presentation.WebApi.Shared.HealthCheck.Extensions;
 
 public static class HealthCheckExtensions
 {
