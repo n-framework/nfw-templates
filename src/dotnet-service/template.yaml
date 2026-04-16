@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=../../template.schema.json
 id: dotnet-service
 name: .NET Service (Clean Architecture)
-description: .NET service template with Domain, Application, Infrastructure, and Api layers
+description: .NET service template with Domain, Application, Infrastructure, and API layers
 version: 1.0.0
-language: dotnet
+language: csharp
 tags:
   - service
   - dotnet

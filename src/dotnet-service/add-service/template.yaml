@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=../../../template.schema.json
+id: dotnet-service/add-service
+name: .NET Service Add Service
+description: Adds a new service to the workspace
+version: 1.0.0
+language: csharp
+steps:
+  - action: render_folder
+    source: 'content/'
+    destination: '.'

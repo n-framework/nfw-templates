@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../../../template.schema.json
+id: dotnet-service/gen-command
+name: .NET Mediator Command
+description: Generates a Mediator command and handler
+version: 1.0.0
+language: csharp
+steps:
+  - action: render
+    source: 'content/Command.cs.tera'
+    destination: 'src/core/{{ ServiceName }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Command.cs'
+  - action: render
+    source: 'content/CommandHandler.cs.tera'
+    destination: 'src/core/{{ ServiceName }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}CommandHandler.cs'

@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=../../template.schema.json
+$schema: https://n-framework.dev/schemas/nfw/template.schema.json
 id: blank-workspace
 name: Blank Workspace
 description: Minimal workspace template

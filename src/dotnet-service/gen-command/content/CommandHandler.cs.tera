@@ -1,0 +1,14 @@
+using Mediator;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace NFramework.{{ Feature }}.Commands.{{ Name }};
+
+public class {{ Name }}CommandHandler : IRequestHandler<{{ Name }}Command, bool>
+{
+    public async ValueTask<bool> Handle({{ Name }}Command request, CancellationToken cancellationToken)
+    {
+        // Implementation goes here
+        return true;
+    }
+}

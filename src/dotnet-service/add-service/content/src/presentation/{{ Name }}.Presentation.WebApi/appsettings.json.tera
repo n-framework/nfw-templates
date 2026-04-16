@@ -1,0 +1,20 @@
+{
+  "OpenApi": {
+    "Title": "{{ Name }} API",
+    "Version": "v1",
+    "Description": "HTTP API for {{ Name }} service",
+    "ContactName": "NFramework",
+    "ContactEmail": "maintainers@n-framework.dev",
+    "LicenseName": "Apache-2.0",
+    "LicenseUrl": "https://www.apache.org/licenses/LICENSE-2.0"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "Database": {
+    "Name": "{{ Name }}Db"
+  }
+}

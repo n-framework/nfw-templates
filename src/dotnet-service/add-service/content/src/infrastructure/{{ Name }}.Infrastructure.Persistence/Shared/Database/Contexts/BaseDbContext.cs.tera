@@ -1,0 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
+namespace {{ Name }}.Infrastructure.Persistence.Shared.Database.Contexts;
+
+public sealed class BaseDbContext(DbContextOptions<BaseDbContext> options) : DbContext(options);

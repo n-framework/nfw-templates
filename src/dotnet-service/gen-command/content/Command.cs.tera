@@ -1,0 +1,8 @@
+using Mediator;
+
+namespace NFramework.{{ Feature }}.Commands.{{ Name }};
+
+public class {{ Name }}Command : IRequest<bool>
+{
+    // Add command properties here
+}

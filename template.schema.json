@@ -12,8 +12,8 @@
     },
     "id": {
       "type": "string",
-      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-      "description": "Template identifier in kebab-case."
+      "pattern": "^[a-z0-9/]+(?:-[a-z0-9/]+)*$",
+      "description": "Template identifier in kebab-case (allows slashes)."
     },
     "name": {
       "type": "string",
@@ -30,7 +30,7 @@
     },
     "language": {
       "type": "string",
-      "enum": ["dotnet", "go", "rust", "neutral"],
+      "enum": ["csharp", "go", "rust", "neutral"],
       "description": "Optional. Omit for language-agnostic templates."
     },
     "tags": {
@@ -53,6 +53,28 @@
     "source_url": {
       "type": "string",
       "minLength": 1
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["action"],
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": ["render", "render_folder", "inject"]
+          },
+          "source": { "type": "string" },
+          "destination": { "type": "string" },
+          "injection_target": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["at_end", "class", "function", "region"] },
+              "value": { "type": "string" }
+            }
+          }
+        }
+      }
     }
   }
 }
