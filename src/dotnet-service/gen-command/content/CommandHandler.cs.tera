@@ -2,13 +2,13 @@ using Mediator;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NFramework.{{ Feature }}.Commands.{{ Name }};
+namespace {{ Namespace }}.Core.Application.Features.{{ Feature }}.Commands.{{ Name }};
 
-public class {{ Name }}CommandHandler : IRequestHandler<{{ Name }}Command, bool>
+public class {{ Name }}CommandHandler : IRequestHandler<{{ Name }}Command, {{ Name }}Response>
 {
-    public async ValueTask<bool> Handle({{ Name }}Command request, CancellationToken cancellationToken)
+    public ValueTask<{{ Name }}Response> Handle({{ Name }}Command request, CancellationToken cancellationToken)
     {
-        // Implementation goes here
-        return true;
+        // TODO: Implementation goes here
+        return new ValueTask<{{ Name }}Response>(new {{ Name }}Response());
     }
 }

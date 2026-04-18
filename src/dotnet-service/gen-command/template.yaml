@@ -7,7 +7,31 @@ language: csharp
 steps:
   - action: render
     source: 'content/Command.cs.tera'
-    destination: 'src/core/{{ ServiceName }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Command.cs'
+    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Command.cs'
   - action: render
     source: 'content/CommandHandler.cs.tera'
-    destination: 'src/core/{{ ServiceName }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}CommandHandler.cs'
+    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}CommandHandler.cs'
+  - action: render
+    source: 'content/CommandResponse.cs.tera'
+    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Response.cs'
+inputs:
+  - id: Validation
+    type: confirm
+    prompt: "Validation (IValidatableRequest)"
+    default: true
+  - id: Logging
+    type: confirm
+    prompt: "Logging (ILoggableRequest)"
+    default: false
+  - id: Secured
+    type: confirm
+    prompt: "Authorization (ISecuredRequest)"
+    default: false
+  - id: Transaction
+    type: confirm
+    prompt: "Transaction (ITransactionalRequest)"
+    default: false
+  - id: CacheRemover
+    type: confirm
+    prompt: "Cache Invalidation (ICacheRemoverRequest)"
+    default: false

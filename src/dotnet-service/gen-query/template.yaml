@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=../../../template.schema.json
+id: dotnet-service/gen-query
+name: .NET Mediator Query
+description: Generates a Mediator query and handler
+version: 1.0.0
+language: csharp
+steps:
+  - action: render
+    source: 'content/Query.cs.tera'
+    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Queries/{{ Name }}/{{ Name }}Query.cs'
+  - action: render
+    source: 'content/QueryHandler.cs.tera'
+    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Queries/{{ Name }}/{{ Name }}QueryHandler.cs'
+  - action: render
+    source: 'content/QueryResponse.cs.tera'
+    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Queries/{{ Name }}/{{ Name }}Response.cs'
+inputs:
+  - id: Validation
+    type: confirm
+    prompt: "Validation (IValidatableRequest)"
+    default: true
+  - id: Logging
+    type: confirm
+    prompt: "Logging (ILoggableRequest)"
+    default: false
+  - id: Secured
+    type: confirm
+    prompt: "Authorization (ISecuredRequest)"
+    default: false
+  - id: Caching
+    type: confirm
+    prompt: "Caching (ICacheableRequest)"
+    default: false

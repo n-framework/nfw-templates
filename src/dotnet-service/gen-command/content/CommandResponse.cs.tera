@@ -1,0 +1,6 @@
+namespace {{ Namespace }}.Core.Application.Features.{{ Feature }}.Commands.{{ Name }};
+
+public record {{ Name }}Response
+{
+    // TODO: Define the properties for the response
+}

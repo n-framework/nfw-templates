@@ -1,0 +1,14 @@
+using Mediator;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace {{ Namespace }}.Core.Application.Features.{{ Feature }}.Queries.{{ Name }};
+
+public class {{ Name }}QueryHandler : IRequestHandler<{{ Name }}Query, {{ Name }}Response>
+{
+    public ValueTask<{{ Name }}Response> Handle({{ Name }}Query request, CancellationToken cancellationToken)
+    {
+        // TODO: Implementation goes here
+        return new ValueTask<{{ Name }}Response>(new {{ Name }}Response());
+    }
+}
