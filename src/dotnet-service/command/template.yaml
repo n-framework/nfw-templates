@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../../../template.schema.json
-id: dotnet-service/gen-command
-name: .NET Mediator Command
-description: Generates a Mediator command and handler
+id: dotnet-service/command
+name: Mediator Command
+description: Creates a Mediator command with an optional response and a corresponding handler
 version: 1.0.0
 language: csharp
 steps:
@@ -15,23 +15,13 @@ steps:
     source: 'content/CommandResponse.cs.tera'
     destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Response.cs'
 inputs:
-  - id: Validation
-    type: confirm
-    prompt: "Validation (IValidatableRequest)"
-    default: true
-  - id: Logging
-    type: confirm
-    prompt: "Logging (ILoggableRequest)"
-    default: false
-  - id: Secured
-    type: confirm
-    prompt: "Authorization (ISecuredRequest)"
-    default: false
-  - id: Transaction
-    type: confirm
-    prompt: "Transaction (ITransactionalRequest)"
-    default: false
-  - id: CacheRemover
-    type: confirm
-    prompt: "Cache Invalidation (ICacheRemoverRequest)"
-    default: false
+  - id: Pipelines
+    type: multiselect
+    prompt: "Which pipelines do you want to enable?"
+    options:
+      - Validation
+      - Logging
+      - Authorization
+      - Transaction
+      - Caching
+    default: ["Validation"]
