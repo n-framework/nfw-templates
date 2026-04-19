@@ -1,13 +1,51 @@
-SHELL := bash
+.PHONY: help setup format lint test build clean
 
-.PHONY: format lint test
+help:
+	@echo "Available targets:"
+	@echo "  make setup   - Restore dotnet tools"
+	@echo "  make format  - Format code using dotnet format and csharpier"
+	@echo "  make lint    - Run strict linting and analysis"
+	@echo "  make test    - Run tests"
+	@echo "  make build   - Build the solution"
+	@echo "  make clean   - Clean build artifacts"
+	@echo "  make help    - Show this help message"
+
+setup:
+	@echo "🔧 Restoring dotnet tools..."
+	dotnet tool restore
 
 format:
-	dotnet format .
-	dotnet csharpier format .
+	@echo "🔧 Fixing code style violations (dotnet format)..."
+	-dotnet format whitespace {{ Name }}.slnx --severity warn
+	-dotnet format style {{ Name }}.slnx --severity warn
+	-dotnet format analyzers {{ Name }}.slnx --severity warn
+	@echo "🎨 Formatting with CSharpier..."
+	-dotnet csharpier format .
+	@echo "✅ Formatting complete!"
 
 lint:
-	dotnet format --verify-no-changes --verbosity quiet
+	@echo "🔍 Verifying code style with dotnet format..."
+	dotnet format {{ Name }}.slnx style --verify-no-changes
+	@echo "🔍 Running strict C# analyzers with dotnet build..."
+	dotnet build {{ Name }}.slnx -warnaserror:true -verbosity:normal \
+		-p:EnforceCodeStyleInBuild=true \
+		-p:EnableCodeStyleSeverity=warning \
+		-p:EnableNETAnalyzers=true \
+		-p:AnalysisMode=All \
+		-p:AnalysisLevel=latest
+	@echo "✨ Linting complete!"
 
 test:
-	dotnet test
+	@echo "🧪 Running .NET tests..."
+	dotnet test {{ Name }}.slnx -m:1 -nodeReuse:false
+	@echo "✅ Test run complete!"
+
+build:
+	@echo "🔨 Building .NET solution..."
+	dotnet build {{ Name }}.slnx
+	@echo "✨ Build complete!"
+
+clean:
+	@echo "🧹 Cleaning build artifacts..."
+	dotnet clean {{ Name }}.slnx
+	@echo "✨ Clean complete!"
