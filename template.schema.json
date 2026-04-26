@@ -54,6 +54,12 @@
       "type": "string",
       "minLength": 1
     },
+    "inputs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/template_input" },
+      "description": "Optional input parameters for the template.",
+      "default": []
+    },
     "steps": {
       "type": "array",
       "items": {
@@ -73,6 +79,49 @@
               "value": { "type": "string" }
             }
           }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "template_input": {
+      "type": "object",
+      "required": ["id", "type", "prompt"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_\\-./]+$",
+          "description": "Unique identifier for the input variable."
+        },
+        "type": {
+          "type": "string",
+          "enum": ["text", "password", "confirm", "select", "multiselect", "object", "list"],
+          "description": "Input type."
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Message displayed to the user when prompted."
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional description displayed below the prompt."
+        },
+        "default": {
+          "description": "Optional default value."
+        },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Valid choices for select/multiselect types."
+        },
+        "properties": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/template_input" },
+          "description": "Nested properties for 'object' type inputs."
+        },
+        "items": {
+          "$ref": "#/$defs/template_input",
+          "description": "Element schema for 'list' type inputs."
         }
       }
     }

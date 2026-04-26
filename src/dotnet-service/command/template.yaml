@@ -4,16 +4,6 @@ name: Mediator Command
 description: Creates a Mediator command with an optional response and a corresponding handler
 version: 1.0.0
 language: csharp
-steps:
-  - action: render
-    source: 'content/Command.cs.tera'
-    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Command.cs'
-  - action: render
-    source: 'content/CommandHandler.cs.tera'
-    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}CommandHandler.cs'
-  - action: render
-    source: 'content/CommandResponse.cs.tera'
-    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Response.cs'
 inputs:
   - id: Pipelines
     type: multiselect
@@ -25,3 +15,13 @@ inputs:
       - Transaction
       - Caching
     default: ["Validation"]
+steps:
+  - action: render
+    source: 'content/Command.cs.tera'
+    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Command.cs'
+  - action: render
+    source: 'content/CommandHandler.cs.tera'
+    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}CommandHandler.cs'
+  - action: render
+    source: 'content/CommandResponse.cs.tera'
+    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Response.cs'
