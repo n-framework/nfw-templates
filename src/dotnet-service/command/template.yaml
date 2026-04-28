@@ -4,6 +4,8 @@ name: Mediator Command
 description: Creates a Mediator command with an optional response and a corresponding handler
 version: 1.0.0
 language: csharp
+required_modules:
+  - mediator
 inputs:
   - id: Pipelines
     type: multiselect

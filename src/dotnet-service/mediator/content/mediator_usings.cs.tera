@@ -1,0 +1,7 @@
+using Mediator;
+using NFramework.Mediator.Mediator.Authorization;
+using NFramework.Mediator.Mediator.Caching;
+using NFramework.Mediator.Mediator.Logging;
+using NFramework.Mediator.Mediator.Performance;
+using NFramework.Mediator.Mediator.Transactions;
+using NFramework.Mediator.Mediator.Validation.FluentValidation;

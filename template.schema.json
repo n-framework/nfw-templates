@@ -60,6 +60,12 @@
       "description": "Optional input parameters for the template.",
       "default": []
     },
+    "required_modules": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Modules that must be present in the target service before this template can execute.",
+      "default": []
+    },
     "steps": {
       "type": "array",
       "items": {
@@ -68,15 +74,40 @@
         "properties": {
           "action": {
             "type": "string",
-            "enum": ["render", "render_folder", "inject"]
+            "enum": ["render", "render_folder", "inject", "run_command"]
           },
           "source": { "type": "string" },
           "destination": { "type": "string" },
+          "command": {
+            "type": "string",
+            "description": "Required for run_command action. The command to execute."
+          },
+          "working_directory": {
+            "type": "string",
+            "description": "Optional for run_command action. Directory to run the command in."
+          },
           "injection_target": {
             "type": "object",
+            "required": ["type"],
             "properties": {
-              "type": { "type": "string", "enum": ["at_end", "class", "function", "region"] },
-              "value": { "type": "string" }
+              "type": { "type": "string", "enum": ["at_end", "region", "pattern_region"] },
+              "value": { "type": "string" },
+              "start_pattern": { "type": "string" },
+              "end_pattern": { "type": "string" }
+            },
+            "if": {
+              "properties": { "type": { "const": "region" } }
+            },
+            "then": {
+              "required": ["value"]
+            },
+            "else": {
+              "if": {
+                "properties": { "type": { "const": "pattern_region" } }
+              },
+              "then": {
+                "required": ["start_pattern", "end_pattern"]
+              }
             }
           }
         }

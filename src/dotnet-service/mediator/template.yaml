@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=../../../template.schema.json
+id: dotnet-service/mediator
+name: Mediator Module
+description: Adds NFramework Mediator support via source-generated DI registration
+version: 1.0.0
+language: csharp
+steps:
+  # Add packages
+  - action: run_command
+    command: 'dotnet add package Mediator.Abstractions --version 3.0.*'
+    working_directory: 'src/core/{{ Namespace }}.Core.Application'
+  - action: run_command
+    command: 'dotnet add package Mediator.SourceGenerator --version 3.0.*'
+    working_directory: 'src/core/{{ Namespace }}.Core.Application'
+  - action: run_command
+    command: 'dotnet add package NFramework.Mediator.Mediator'
+    working_directory: 'src/core/{{ Namespace }}.Core.Application'
+  - action: run_command
+    command: 'dotnet add package NFramework.Mediator.Mediator.Validation.FluentValidation'
+    working_directory: 'src/core/{{ Namespace }}.Core.Application'
+  # Add Mediator to registration
+  - action: inject
+    source: 'content/mediator_registration.cs.tera'
+    destination: 'src/core/{{ Namespace }}.Core.Application/ApplicationServiceRegistration.Nfw.g.cs'
+    injection_target:
+      type: region
+      value: module-registrations
+  - action: inject
+    source: 'content/mediator_usings.cs.tera'
+    destination: 'src/core/{{ Namespace }}.Core.Application/ApplicationServiceRegistration.Nfw.g.cs'
+    injection_target:
+      type: region
+      value: module-usings

@@ -1,13 +1,15 @@
 using Microsoft.Extensions.DependencyInjection;
-using Mediator;
 
 namespace {{ Name }}.Core.Application;
 
-public static class ApplicationServiceRegistration
+public static partial class ApplicationServiceRegistration
 {
-	public static IServiceCollection AddApplicationLayer(this IServiceCollection services)
-	{
-		services.AddMediator();
-		return services;
-	}
+    extension(IServiceCollection services)
+    {
+        public IServiceCollection AddApplicationLayer()
+        {
+            services.AddNfwModules();
+            return services;
+        }
+    }
 }
