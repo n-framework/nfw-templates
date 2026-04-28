@@ -20,10 +20,10 @@ inputs:
 steps:
   - action: render
     source: 'content/Command.cs.tera'
-    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Command.cs'
+    destination: 'src/core/{{ Service }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Command.cs'
   - action: render
     source: 'content/CommandHandler.cs.tera'
-    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}CommandHandler.cs'
+    destination: 'src/core/{{ Service }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}CommandHandler.cs'
   - action: render
     source: 'content/CommandResponse.cs.tera'
-    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Response.cs'
+    destination: 'src/core/{{ Service }}.Core.Application/Features/{{ Feature }}/Commands/{{ Name }}/{{ Name }}Response.cs'

@@ -1,8 +1,9 @@
 // Mediator
 services.AddMediator();
-services.AddNFrameworkLogging();
-services.AddNFrameworkPerformance();
-services.AddNFrameworkAuthorization();
-services.AddNFrameworkTransactions();
-services.AddNFrameworkCaching();
-services.AddNFrameworkValidationWithFluentValidation();
+// TODO: Active when NFramework packages are released
+//services.AddNFrameworkLogging();
+//services.AddNFrameworkPerformance();
+//services.AddNFrameworkAuthorization();
+//services.AddNFrameworkTransactions();
+//services.AddNFrameworkCaching();
+//services.AddNFrameworkValidationWithFluentValidation();

@@ -19,10 +19,10 @@ inputs:
 steps:
   - action: render
     source: 'content/Query.cs.tera'
-    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Queries/{{ Name }}/{{ Name }}Query.cs'
+    destination: 'src/core/{{ Service }}.Core.Application/Features/{{ Feature }}/Queries/{{ Name }}/{{ Name }}Query.cs'
   - action: render
     source: 'content/QueryHandler.cs.tera'
-    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Queries/{{ Name }}/{{ Name }}QueryHandler.cs'
+    destination: 'src/core/{{ Service }}.Core.Application/Features/{{ Feature }}/Queries/{{ Name }}/{{ Name }}QueryHandler.cs'
   - action: render
     source: 'content/QueryResponse.cs.tera'
-    destination: 'src/core/{{ Namespace }}.Core.Application/Features/{{ Feature }}/Queries/{{ Name }}/{{ Name }}Response.cs'
+    destination: 'src/core/{{ Service }}.Core.Application/Features/{{ Feature }}/Queries/{{ Name }}/{{ Name }}Response.cs'
