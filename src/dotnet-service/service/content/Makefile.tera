@@ -16,7 +16,7 @@ setup:
 
 format:
 	@echo "🔧 Fixing code style violations (dotnet format)..."
-	-dotnet format whitespace {{ Name }}.slnx --severity warn
+	-dotnet format whitespace {{ Name }}.slnx
 	-dotnet format style {{ Name }}.slnx --severity warn
 	-dotnet format analyzers {{ Name }}.slnx --severity warn
 	@echo "🎨 Formatting with CSharpier..."

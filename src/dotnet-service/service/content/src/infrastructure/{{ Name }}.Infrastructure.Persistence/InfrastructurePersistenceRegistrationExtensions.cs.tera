@@ -40,6 +40,8 @@ public static class InfrastructurePersistenceRegistrationExtensions
 		/// <exception cref="InvalidOperationException">Thrown when Database:Name is missing or invalid.</exception>
 		public DatabaseConfiguration GetDatabaseConfiguration()
 		{
+			ArgumentNullException.ThrowIfNull(configuration);
+
 			var section = configuration.GetSection("Database");
 			if (!section.Exists())
 			{
@@ -53,7 +55,7 @@ public static class InfrastructurePersistenceRegistrationExtensions
 			if (string.IsNullOrWhiteSpace(name))
 			{
 				throw new InvalidOperationException(
-					"Database:Name cannot be empty or whitespace. " + "Provide a valid database name in configuration."
+					"Database:Name cannot be empty or whitespace. Provide a valid database name in configuration."
 				);
 			}
 
