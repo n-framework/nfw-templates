@@ -20,7 +20,7 @@ Models (configuration, DTO, and helper records) live under `Models` subfolders i
 
 - `core/{{ Name }}.Domain`: Business entities and value objects.
 - `core/{{ Name }}.Application`: Application services and DI registration helpers.
-- `infrastructure/{{ Name }}.Persistence`: Database context (`BaseDbContext`), EF Core setup, and configuration models (e.g., `DatabaseConfiguration`).
+- `infrastructure/{{ Name }}.Infrastructure.Persistence`: Database context (`BaseDbContext`), EF Core setup, and configuration models (e.g., `DatabaseConfiguration`).
 - `presentation/{{ Name }}.WebApi`: Host bootstrap (`Program.cs`), health endpoints, and OpenAPI configuration.
 
 ## Health Endpoints

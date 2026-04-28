@@ -1,6 +1,6 @@
 <Solution>
 	<Project Path="src/core/{{ Name }}.Core.Domain/{{ Name }}.Core.Domain.csproj" />
 	<Project Path="src/core/{{ Name }}.Core.Application/{{ Name }}.Core.Application.csproj" />
-	<Project Path="src/infrastructure/{{ Name }}.Persistence/{{ Name }}.Infrastructure.Persistence.csproj" />
+	<Project Path="src/infrastructure/{{ Name }}.Infrastructure.Persistence/{{ Name }}.Infrastructure.Persistence.csproj" />
 	<Project Path="src/presentation/{{ Name }}.Presentation.WebApi/{{ Name }}.Presentation.WebApi.csproj" />
 </Solution>
