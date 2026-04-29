@@ -9,3 +9,10 @@ tags:
   - dotnet
   - clean-architecture
 source_url: https://github.com/n-framework/nfw-templates
+generators:
+  service: service
+  persistence: persistence
+  api: api
+  command: command
+  mediator: mediator
+  query: query

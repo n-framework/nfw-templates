@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=../../../template.schema.json
+id: dotnet-service/persistence
+name: Persistence Module
+description: Adds EF Core Infrastructure.Persistence layer with DbContext, repository base, and DI registration wired into Program.cs
+version: 1.0.0
+language: csharp
+tags:
+  - feature
+steps:
+  # Render the Infrastructure.Persistence project files
+  - action: render_folder
+    source: 'content/src/'
+    destination: 'src/'
+  # Wire the Persistence project into the solution
+  - action: run_command
+    command: 'dotnet sln add src/infrastructure/{{ Service }}.Infrastructure.Persistence/{{ Service }}.Infrastructure.Persistence.csproj'
+  # Add project reference from WebApi to Persistence
+  - action: run_command
+    command: 'dotnet add src/presentation/{{ Service }}.Presentation.WebApi reference src/infrastructure/{{ Service }}.Infrastructure.Persistence/{{ Service }}.Infrastructure.Persistence.csproj'
+  # Inject persistence registration into Program.Nfw.g.cs
+  - action: inject
+    source: 'content/persistence_registration.cs.tera'
+    destination: 'src/presentation/{{ Service }}.Presentation.WebApi/Program.Nfw.g.cs'
+    injection_target:
+      type: region
+      value: module-registrations
+  # Inject persistence using into Program.Nfw.g.cs
+  - action: inject
+    source: 'content/persistence_usings.cs.tera'
+    destination: 'src/presentation/{{ Service }}.Presentation.WebApi/Program.Nfw.g.cs'
+    injection_target:
+      type: region
+      value: module-usings

@@ -10,7 +10,6 @@
 	<!-- Project References -->
 	<ItemGroup>
 		<ProjectReference Include="../../core/{{ Name }}.Core.Application/{{ Name }}.Core.Application.csproj" />
-		<ProjectReference Include="../../infrastructure/{{ Name }}.Infrastructure.Persistence/{{ Name }}.Infrastructure.Persistence.csproj" />
 	</ItemGroup>
 	<!-- Package References -->
 	<ItemGroup>

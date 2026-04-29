@@ -1,0 +1,1 @@
+builder.Services.AddInfrastructureServices(builder.Configuration.GetInfrastructureConfiguration());

@@ -66,6 +66,19 @@
       "description": "Modules that must be present in the target service before this template can execute.",
       "default": []
     },
+    "generators": {
+      "type": "object",
+      "properties": {
+        "service": { "type": "string" },
+        "persistence": { "type": "string" },
+        "api": { "type": "string" },
+        "command": { "type": "string" },
+        "mediator": { "type": "string" },
+        "query": { "type": "string" }
+      },
+      "additionalProperties": false,
+      "description": "Explicit path mappings for child generators (e.g. service, persistence)."
+    },
     "steps": {
       "type": "array",
       "items": {

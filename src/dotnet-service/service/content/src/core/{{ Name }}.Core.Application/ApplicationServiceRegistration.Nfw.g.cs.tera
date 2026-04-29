@@ -12,7 +12,7 @@ public static partial class ApplicationServiceRegistration
 {
     extension(IServiceCollection services)
     {
-        private IServiceCollection AddNfwModules()
+        internal IServiceCollection AddNfwModules()
         {
             // <nfw:module-registrations:start>
             // <nfw:module-registrations:end>
