@@ -2,4 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace {{ Name }}.Infrastructure.Persistence.Shared.Database.Contexts;
 
-public sealed class BaseDbContext(DbContextOptions<BaseDbContext> options) : DbContext(options);
+public partial class BaseDbContext(DbContextOptions<BaseDbContext> options) : DbContext(options)
+{
+    // Add custom DbContext modifications here
+}

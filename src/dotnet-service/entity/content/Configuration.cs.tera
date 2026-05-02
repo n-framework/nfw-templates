@@ -1,0 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using {{ Service }}.Core.Domain.Features.{{ Feature }}.Entities;
+
+namespace {{ Service }}.Infrastructure.Persistence.Features.{{ Feature }}.Configurations;
+
+public partial class {{ Name }}Configuration : IEntityTypeConfiguration<{{ Name }}>
+{
+    partial void ConfigureCustom(EntityTypeBuilder<{{ Name }}> builder)
+    {
+        // TODO: Add custom configuration here if needed
+    }
+}

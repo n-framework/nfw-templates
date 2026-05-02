@@ -10,9 +10,9 @@ tags:
   - clean-architecture
 source_url: https://github.com/n-framework/nfw-templates
 generators:
-  service: service
-  persistence: persistence
-  api: api
-  command: command
-  mediator: mediator
-  query: query
+  command: ./command/
+  entity: ./entity/
+  mediator: ./mediator/
+  persistence: ./persistence/
+  query: ./query/
+  service: ./service/

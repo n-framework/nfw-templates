@@ -1,0 +1,27 @@
+id: dotnet-service/entity
+name: Entity
+steps:
+  - action: render
+    source: "content/Entity.Nfw.g.cs.tera"
+    destination: "src/core/{{ Service }}.Core.Domain/Features/{{ Feature }}/Entities/{{ Name }}.Nfw.g.cs"
+  - action: render
+    source: "content/Entity.cs.tera"
+    destination: "src/core/{{ Service }}.Core.Domain/Features/{{ Feature }}/Entities/{{ Name }}.cs"
+  - action: render
+    source: "content/Configuration.Nfw.g.cs.tera"
+    destination: "src/infrastructure/{{ Service }}.Infrastructure.Persistence/Features/{{ Feature }}/Configurations/{{ Name }}Configuration.Nfw.g.cs"
+  - action: render
+    source: "content/Configuration.cs.tera"
+    destination: "src/infrastructure/{{ Service }}.Infrastructure.Persistence/Features/{{ Feature }}/Configurations/{{ Name }}Configuration.cs"
+  - action: inject
+    source: "content/db-set-using.cs.tera"
+    destination: "src/infrastructure/{{ Service }}.Infrastructure.Persistence/Shared/Database/Contexts/BaseDbContext.Nfw.g.cs"
+    injection_target:
+      type: region
+      value: db-set-usings
+  - action: inject
+    source: "content/db-set.cs.tera"
+    destination: "src/infrastructure/{{ Service }}.Infrastructure.Persistence/Shared/Database/Contexts/BaseDbContext.Nfw.g.cs"
+    injection_target:
+      type: region
+      value: db-sets

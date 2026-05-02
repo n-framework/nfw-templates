@@ -1,0 +1,1 @@
+public DbSet<{{ Name }}> {{ Name }}s { get; set; } = null!;

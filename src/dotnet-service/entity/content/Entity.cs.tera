@@ -1,0 +1,17 @@
+{% if IdType == "string" -%}{%- set CSIdType = "string" -%}
+{%- elif IdType == "integer" -%}{%- set CSIdType = "int" -%}
+{%- elif IdType == "uuid" -%}{%- set CSIdType = "Guid" -%}
+{%- else -%}{%- set CSIdType = IdType -%}{%- endif -%}
+{%- if EntityType == "entity" -%}{%- set CSEntityType = "Entity" -%}
+{%- elif EntityType == "auditable_entity" -%}{%- set CSEntityType = "AuditableEntity" -%}
+{%- elif EntityType == "soft_deletable_entity" -%}{%- set CSEntityType = "SoftDeletableEntity" -%}
+{%- else -%}{%- set CSEntityType = "Entity" -%}{%- endif -%}
+using System;
+using NFramework.Persistence.Abstractions.Entities;
+
+namespace {{ Service }}.Core.Domain.Features.{{ Feature }}.Entities;
+
+public partial class {{ Name }} : {{ CSEntityType }}<{{ CSIdType }}>
+{
+    // TODO: Add your custom domain logic here if needed
+}

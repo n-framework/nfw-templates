@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../../template.schema.json
 $schema: https://n-framework.dev/schemas/nfw/template.schema.json
 id: blank-workspace
 name: Blank Workspace
@@ -6,3 +7,4 @@ version: 1.0.0
 tags:
   - workspace
 source_url: https://github.com/n-framework/nfw-templates
+
